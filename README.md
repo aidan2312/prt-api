@@ -24,7 +24,7 @@ Run the app
 ```bash
   uvicorn main:app --reload
 ```
-Navigate to http://127.0.0.1:80/docs 
+Navigate to http://127.0.0.1:8000/docs 
 ## Demo
 
 TBD
