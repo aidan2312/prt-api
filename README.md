@@ -54,7 +54,19 @@ Since different transit authorities may categorize datafeeds in different ways, 
 
 `SERVICE_BULLETINS_ENDPOINT` = service bulletins endpoint, varies by provider.
 
+Example: 
 
+
+```
+API_KEY="asdtasdfasdrewasdf"
+API_ROOT_URL="http://truetime.portauthority.org/bustime/api/v3/"
+STOPS_ENDPOINT="getstops"
+PREDICTIONS_ENDPOINT="getpredictions"
+VEHICLE_ENDPOINT="getvehicles"
+PATTERNS_ENDPOINT="getpatterns"
+SERVICE_BULLETINS_ENDPOINT="getservicebulletins"
+
+```
 
 
 
