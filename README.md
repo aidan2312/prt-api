@@ -1,7 +1,10 @@
 
 # PRT-API
 
- Second iteration of this project - migrated from Flask to FastAPI since I am no longer relying on Jinja templates and not including a client.  This API processes responses from a BusTime API and returns the data in easy-to-read (and locate), concise GeoJSON, allowing it to be easily integrated into any web map that supports GeoJSON.
+ Second iteration of this project - migrated from Flask to FastAPI since I am no longer relying on Jinja templates and not including a client.  This API processes responses from a BusTime API and returns the data in easy-to-read (and locate), concise GeoJSON, allowing it to be easily integrated into any web map that supports GeoJSON.  
+ 
+
+ You need an API Key to access the transit feeds.  Reach out to your transit provider for that.
 
 
 
@@ -54,7 +57,7 @@ Since different transit authorities may categorize datafeeds in different ways, 
 
 `SERVICE_BULLETINS_ENDPOINT` = service bulletins endpoint, varies by provider.
 
-Example: 
+Example (this example works if you're in Pittsburgh, just get an API key): 
 
 
 ```
