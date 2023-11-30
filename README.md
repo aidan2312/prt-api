@@ -20,6 +20,7 @@ Clone this repo
   cd prt-api
 ```
 Create a .env file (see below for variables)
+
 Install Python packages
 ```bash
   pip -r requirements.txt
