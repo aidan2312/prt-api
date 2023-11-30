@@ -22,7 +22,7 @@ Install Python packages
 ```
 Run the app
 ```bash
-  uvicorn main:app --host 127.0.0.1 --port 80
+  uvicorn main:app --reload
 ```
 Navigate to http://127.0.0.1:80/docs 
 ## Demo
