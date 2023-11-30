@@ -47,7 +47,7 @@ Since different transit authorities may categorize datafeeds in different ways, 
 
 `API_KEY` = Your transit authority's BusTime API Key
 
-`API_ROOT_URL` = Root url of the BusTime API you're fetching from (e.g. http://<Host>/bustime/api/v3/)
+`API_ROOT_URL` = Root url of the BusTime API you're fetching from (e.g. http://host/bustime/api/v3/)
 
 `STOPS_ENDPOINT` = The stops endpoint, typically /getstops/
 
