@@ -2,8 +2,11 @@ import geojson
 from shapely.geometry import Point, LineString, shape, mapping
 from shapely.ops import nearest_points
 import requests
+
+#PRT's Light Rail Lines (just need to be geojson)
 agol_lines = requests.get("https://services3.arcgis.com/544gNI3xxlFIWuTc/arcgis/rest/services/PAAC_Routes_current/FeatureServer/0/query?where=MODE+%3D+%27Light+Rail%27&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&relationParam=&returnGeodetic=false&outFields=&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&defaultSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pgeojson&token=").json()
 
+#convert a stop to geojson
 def stops_to_geojson(data):
     features = []
 
@@ -22,7 +25,7 @@ def stops_to_geojson(data):
 
     return geojson.FeatureCollection(features)
 
-
+#convert a vehicle to geojson
 def vehicle_to_geojson(data):
     features = []
     

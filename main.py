@@ -4,8 +4,14 @@ from dotenv import load_dotenv
 import os
 from fetch import LightRail
 import json
+import requests
+import logging
 
 app = FastAPI()
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())
+
 
 @app.get("/api/lrt/getstops", name="Get Light Rail Stops")
 def get_stops():
@@ -68,3 +74,19 @@ def getBulletins():
         JSON: Bulletins related to light rail.
     """
     return LightRail.getBulletins()
+
+@app.get("/api/parcels/getParcel", name="Get Parcel")
+def getParcel(pin: str):
+    """
+    Endpoint to retrieve parcel information.
+
+    Args:
+        pin (string): Parcel ID.
+
+    Returns:
+        JSON: Parcel information.
+    """
+    parcelUrl = 'http://tools.wprdc.org/property-api/v1/parcels/' + pin
+    response = requests.get(parcelUrl)
+    logging.info(response)
+    return response.json()
