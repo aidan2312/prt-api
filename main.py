@@ -6,6 +6,7 @@ from fetch import LightRail
 import json
 import requests
 import logging
+import onetimepad as otp
 
 app = FastAPI()
 logger = logging.getLogger(__name__)
@@ -90,3 +91,32 @@ def getParcel(pin: str):
     response = requests.get(parcelUrl)
     logging.info(response)
     return response.json()
+
+
+@app.get("/api/otp/encrypt", name="Encrypt Message")
+def encrypt(msg: str, key: str):
+    """
+    Endpoint to encrypt a message using a one-time pad.
+
+    Args:
+        msg (string): Message to encrypt.
+        key (string): Key to use for encryption.
+
+    Returns:
+        string: Encrypted message.
+    """
+    return otp.encrypt(msg, key)
+
+@app.get("/api/otp/decrypt", name="Decrypt Message")
+def decrypt(msg: str, key: str):
+    """
+    Endpoint to decrypt a message using a one-time pad.
+
+    Args:
+        msg (string): Message to decrypt.
+        key (string): Key to use for decryption.
+
+    Returns:
+        string: Decrypted message.
+    """
+    return otp.decrypt(msg, key)
